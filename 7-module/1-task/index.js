@@ -8,5 +8,10 @@
  * @return {Function}
  */
 function makeLogging(fn, log) {
-
+        return function (){
+        const args = [].slice.call(arguments);
+        log.push(args);
+        const res = fn.apply(this, arguments);
+        return res;
+    }
 }
