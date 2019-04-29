@@ -1,10 +1,9 @@
-(function () {
-    'use strict';
+import {Input} from './input'
 
-    window.app = {};
+export class App {
+    constructor () {
+      this.input = new Input();
+    }
+  };
 
-    window.addEventListener('DOMContentLoaded', function () {
-       window.app.input = new window.Input();
-    });
-
-})();
+window.app = new App;
